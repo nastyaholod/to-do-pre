@@ -46,14 +46,14 @@ function createItem(itemText) {
         saveTasks(items);
     });
     
-    // Обработчик для кнопки редактирования - делает элемент редактируемым
+    // Обработчик для кнопки редактирования 
     editButton.addEventListener('click', () => {
         // Устанавливаем атрибут contenteditable="true" и переводим фокус
         textElement.contentEditable = true;
         textElement.focus();
     });
     
-    // Обработчик события blur (потеря фокуса) для элемента с текстом задачи
+    // Обработчик события для элемента с текстом задачи
     textElement.addEventListener('blur', () => {
         // Отключаем возможность редактирования
         textElement.contentEditable = false;
@@ -63,7 +63,7 @@ function createItem(itemText) {
         saveTasks(items);
     });
     
-    // Дополнительно: обработка нажатия клавиши Enter при редактировании
+    // обработка нажатия клавиши Enter при редактировании
     textElement.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
             event.preventDefault(); // Предотвращаем перенос строки
